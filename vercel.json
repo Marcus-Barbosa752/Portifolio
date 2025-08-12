@@ -1,8 +1,13 @@
 {
-    "cleanUrls": true,
-    "trailingSlash": false,
-    "redirects": [],
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/Portifolio/$1" }
-    ]
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1.py" },
+    { "src": "/(.*)", "dest": "/Index.html" }
+  ]
 }
