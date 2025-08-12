@@ -90,5 +90,14 @@
                 "IsAcessoLink": true
             }
         ]
+    },
+    {
+        "Python": [
+            {
+                "Image": "Assets/Images/Banner/Banner_Seis.jpeg",
+                "Titulo": "Python teste",
+                "Link": "https://www.google.com"
+            }
+        ]
     }
 ]
