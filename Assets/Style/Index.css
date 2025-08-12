@@ -1,17 +1,14 @@
+:root {
+    --Bg-Image: url('../Images/Logo.png');
+}
 body {
-    background: url('../Images/Logo.png'), #333;
+    background: var(--Bg-Image), #333;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
     overflow-x: hidden;
-}
-body::-webkit-scrollbar {
-    width: 5px;
-}
-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, blue, rgb(0, 0, 63));
-    border-radius: 10px;
+    overflow: hidden;
 }
 header button#BtnMenu,
 section.ControlsBannerMobile {
@@ -57,6 +54,8 @@ header {
     justify-content:space-between;
     align-items: center;
     padding: 20px 50px;
+    position: sticky;
+    z-index: 2;
 }
 header img {
     width: 50px;
@@ -198,8 +197,6 @@ section.Habilidades {
     padding-left: 50px;
 }
 section.Habilidades .CardHabilidades {
-    background: var(--Bg-Habilidades);
-    box-shadow: 0 0 8px var(--Box-Habilidades);
     border-radius: 10px;
     display: grid;
     place-content: center;
@@ -220,6 +217,7 @@ section.Sobre {
     justify-content: space-between;
     padding-left: 30px;
     padding-top: 10px;
+    z-index: -1;
 }
 section.Sobre .LeftSobre {
     color: white;
@@ -452,4 +450,156 @@ section.TemasProjetos .CardTemaProjetos button:hover i {
     border: none;
     outline: none;
     resize: none;
+}
+section.SessaoHabilidades {
+    position: absolute;
+    background: var(--Bg-Image), #333;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+    width: 80vw;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skew(-36deg, 0deg) scale(0, 0.25);
+    animation: tech 2s linear;
+    box-shadow: 0 0 20px black;
+}
+section.SessaoHabilidades .ContainerSearch {
+    margin-top: 70px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 40vw;
+    box-shadow: 0 0 10px black;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+section.SessaoHabilidades .ContainerSearch i {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+section.SessaoHabilidades .ContainerSearch input {
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 10px;
+}
+section.SessaoHabilidades .ContainerSearch input:focus {
+    background: rgba(0, 0, 0, 0.589);
+    box-shadow: 0 0 10px black;
+}
+section.SessaoHabilidades .ContainerSearch input::placeholder {
+    color: white;
+}
+section.SessaoHabilidades .ContainerSearch input#InputFiltroHabilidadesSession {
+    width: 100%;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos {
+    width: 100vw;
+    height: calc(100% - 133px);
+    display: flex;
+    gap: 30px;
+    padding: 5px 40px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Left {
+    display: grid;
+    grid-template-columns: repeat(1, 60px);
+    grid-template-rows: repeat(6, 60px);
+    grid-gap: 20px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Left .CardHabilidades {
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    color: white;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth {
+    position: relative;
+    background: rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(10px);
+    height: calc(100% - 30px);
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    margin-top: 40px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .IndicatorHabilidades {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #0000006e, #66666667);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 200px);
+    padding: 40px 10px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades img {
+    width: 100%;
+    height: 170px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades .Bottom {
+    width: 100%;
+    background: black;
+    color: white;
+    padding-bottom: 20px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades .Bottom h4 {
+    width: 100%;
+    padding: 10px 7px;
+    font-weight: bold;
+    font-size: 17px;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades .Bottom button {
+    background: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades .Bottom button:hover {
+    color: aqua;
+}
+section.OpenSection {
+    transform: translate(-50%, -50%) skew(0deg, 0deg) scale(1, 1);
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
 }
