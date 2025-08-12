@@ -1,0 +1,4 @@
+flask
+python-dotenv
+sendgrid
+python-dotenv
