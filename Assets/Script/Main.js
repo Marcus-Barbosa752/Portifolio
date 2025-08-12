@@ -1,6 +1,57 @@
 import { GetInfoInDataJson } from "./API.js"
 
 // =======================
+// ENVIAR DADOS DO FORMULÁRIO PARA WHATSAPP 
+// =======================
+const BtnEnviarFormContato = document.getElementById('BtnEnviarFormContato')
+
+const InputNomeFormContato = document.getElementById("InputNomeFormContato")
+const InputEmailOrTelefoneContato = document.getElementById("InputEmailOrTelefoneContato")
+const InputMensagemFormContato = document.getElementById("InputMensagemFormContato")
+
+const REGEXEMAIL = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+const REGEXTELEFONE = /^(?:\+55\s?)?(?:\(?\d{2}\)?\s?)?(?:9\d{4}-?\d{4}|\d{4}-?\d{4})$/
+let Url = ''
+
+const VerificarCampo = (Campo) => {
+    if (!Campo.value.trim()) {
+        Campo.style.background = 'red'
+        Campo.onclick = () => Campo.style.background = 'black'
+        return false
+    }
+
+    if (Campo === InputEmailOrTelefoneContato) {
+        if (!(REGEXEMAIL.test(Campo.value) || REGEXTELEFONE.test(Campo.value))) {
+            alert("Digite um e-mail ou telefone válido!")
+            return false
+        }
+    }
+
+    return true
+}
+
+BtnEnviarFormContato.onclick = (e) => {
+    e.preventDefault()
+
+    if (!VerificarCampo(InputNomeFormContato) || 
+        !VerificarCampo(InputEmailOrTelefoneContato) || 
+        !VerificarCampo(InputMensagemFormContato)) {
+        alert("Preencha todos os campos corretamente!")
+        return
+    }
+
+    const SeuTexto = `
+        Nome: ${InputNomeFormContato.value}
+        Email/Telefone: ${InputEmailOrTelefoneContato.value}
+        Texto:
+        ${InputMensagemFormContato.value}
+    `
+
+    Url = `https://wa.me/5571991778968?text=${encodeURIComponent(SeuTexto)}`
+    open(Url)
+}
+
+// =======================
 // ANIMAÇÕES SCROLLREVEAL
 // =======================
 const DOMQUERYALL = [
