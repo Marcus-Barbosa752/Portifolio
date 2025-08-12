@@ -5,20 +5,20 @@
     <meta name="theme-color" content="#00004d">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio</title>
-
-    <link rel="shortcut icon" href="/Assets/Images/portfolio.png">
+    <link rel="shortcut icon" href="Assets/Images/portfolio.png" type="image/x-icon">
 
     <!-- Flaticon -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
     <!-- CSS Local -->
-    <link rel="stylesheet" href="/Assets/Style/Global.css">
-    <link rel="stylesheet" href="/Assets/Style/Index.css">
-    <link rel="stylesheet" href="/Assets/Style/SliderShow.css">
-    <link rel="stylesheet" href="/Assets/Style/Responsive.css">
+    <link rel="stylesheet" href="Assets/Style/Global.css">
+    <link rel="stylesheet" href="Assets/Style/Index.css">
+    <link rel="stylesheet" href="Assets/Style/SliderShow.css">
+    <link rel="stylesheet" href="Assets/Style/Responsive.css">
 </head>
 <body>
 
@@ -26,19 +26,19 @@
     
     <!-- Cabeçalho -->
     <header>
-        <img src="/Assets/Images/Icon.png" alt="Logo">
+        <img src="Assets/Images/Icon.png" alt="Logo">
 
         <!-- Navegação de sessão -->
         <nav>
             <ul>
-                <li id="LiHome"><i class="fi fi-sr-home"></i> Pagina inicial</li>
-                <li id="LiHabilidades"><i class="fi fi-sr-responsability"></i> Habilidades</li>
-                <li id="LiPerfil"><i class="fi fi-sr-user"></i> Perfil</li>
+                <li id="LiHome"><i class="fi fi-sr-home"></i>Pagina inicial</li>
+                <li id="LiHabilidades"><i class="fi fi-sr-responsability"></i>Habilidades</li>
+                <li id="LiPerfil"><i class="fi fi-sr-user"></i>Perfil</li>
                 <div class="SessionIndicator" id="SessionIndicator"></div>
             </ul>
         </nav>
 
-        <button id="BtnServicos"><i class="fi fi-sr-user-headset"></i> Serviços</button>
+        <button id="BtnServicos"><i class="fi fi-sr-user-headset"></i>Serviços</button>
         <button id="BtnMenu">
             <span class="SpanOpenMenuDois"></span>
             <span class="SpanOpenMenuUm"></span>
@@ -50,11 +50,13 @@
         <div class="Informacoes">
             <h4 id="InsetTitleNameProject"></h4>
             <p id="InsertBiographyProject"></p>
+
             <button id="BtnAcessarProjetoBanner">Acessar</button>
         </div>
 
         <div class="FigurasBanner" id="InsertFigureBanner">
             <div class="FigurePrincipal"></div>
+
             <section class="InsertOthersFiguresBanner" id="InsertOthersFiguresBanner">
                 <div class="FigureFilaBanner" style="--Bg: red;"></div>
                 <div class="FigureFilaBanner" style="--Bg: cyan;"></div>
@@ -73,6 +75,7 @@
     </section>
 
     <h3 class="TitleSession">Habilidades</h3>
+
     <section class="Habilidades">
         <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-python"></i></div>
         <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;"><i class="fi fi-brands-node-js"></i></div>
@@ -83,6 +86,7 @@
     </section>
 
     <h3 class="TitleSession">Sobre</h3>
+
     <section class="Sobre">
         <div class="LeftSobre">
             Profissional multidisciplinar com experiência em UX/UI e desenvolvimento de
@@ -94,18 +98,38 @@
             da equipe. Estou aberto adquirir conhecimentos para o melhor andamento do
             trabalho.
         </div>
-        <img class="MinhaFoto" src="/Assets/Images/Marcus_Barbosa_Anime.png" alt="Foto de Marcus Barbosa no estilo de anime">
+
+        <img class="MinhaFoto" src="Assets/Images/Marcus_Barbosa_Anime.png" alt="Foto de Marcus Barbosa no estilo de aniime">
     </section>
 
-    <h3 class="TitleSession">Projetos</h3>
-    <section class="ProjetosHome" id="ProjetosHome"></section>
+    <h3 class="TitleSession">
+        Projetos
 
-    <h3 class="TitleSession">Temas</h3>
+        <section class="SelectFilterProjetosHome" id="SelectFilterProjetosHome">
+            <h4>Todos</h4>
+            <i class="fi fi-br-caret-down"></i>
+        </section>
+    </h3>
+
+    <section class="ProjetosHome" id="ProjetosHome">
+        <!--<div class="CardProjetosHome">
+            <img src="https://cdn.dribbble.com/userupload/26887514/file/original-dd88d4e65e9bc3ead90d435e6fe456ed.png?resize=1024x768&vertical=center" alt="">
+
+            <div class="Bottom">
+                <h4>Nome</h4>
+                <button>Acessar</button>
+            </div>
+        </div>-->
+    </section>
+
+    <h3 class="TitleSession">Temas</h3>    
+
     <section class="TemasProjetos">
         <div class="CardTemaProjetos">
             <h4>E-commerce</h4>
             <button><a href="#">Acessar</a><i class="fi fi-br-caret-right"></i></button>
         </div>
+
         <div class="CardTemaProjetos">
             <h4>Player</h4>
             <button><a href="#">Acessar</a><i class="fi fi-br-caret-right"></i></button>
@@ -113,7 +137,7 @@
     </section>
 
     <h3 class="TitleSession">Entre em contato</h3>
-    
+
     <form id="formContato" class="FormContato">
         <div class="Left" id="Left">
             <label for="">Nome</label>
@@ -129,10 +153,55 @@
         <textarea id="InputMensagemFormContato" placeholder="Mensagem"></textarea>
     </form>
 
-    <!-- Scripts -->
+    <!-- Sessão -->
+    <!-- Habilidades -->
+    <datalist id="DataHabilidades">
+        <option value="Todos"></option>
+        <option value="Python"></option>
+        <option value="NodeJs"></option>
+        <option value="JavaScript"></option>
+        <option value="React"></option>
+        <option value="TypeScript"></option>
+        <option value="MySql"></option>
+    </datalist>
+
+    <section class="SessaoHabilidades" id="SessaoHabilidades">
+        <div class="ContainerSearch">
+            <i class="fi fi-rr-search"></i>
+            <input type="text" id="InputSearchHabilidadesSession" placeholder="Pesquisar">
+            <input type="text" id="InputFiltroHabilidadesSession" value="Todos" placeholder="Filtro" list="DataHabilidades">
+        </div>
+
+        <section class="HabilidadesAndProjetos">
+            <div class="Left">
+                <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-python"></i></div>
+                <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;"><i class="fi fi-brands-node-js"></i></div>
+                <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-js"></i></div>
+                <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;"><i class="fi fi-ss-react"></i></div>
+                <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;"><i class="fi fi-brands-typescript"></i></div>
+                <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;"><i class="fi fi-brands-mysql"></i></div>
+            </div>
+
+            <div class="Rigth">
+                <div class="IndicatorHabilidades" id="IndicatorHabilidades">Todos os projetos</div>
+
+                <section id="InsertProjetosHabilidades" class="InsertProjetosHabilidades">
+                    <!--<div class="CardProjetosHabilidades">
+                        <img src="https://cdn.dribbble.com/userupload/26887514/file/original-dd88d4e65e9bc3ead90d435e6fe456ed.png?resize=1024x768&vertical=center" alt="">
+            
+                        <div class="Bottom">
+                            <h4>Nome</h4>
+                            <button>Acessar</button>
+                        </div>
+                    </div>-->
+                </section>
+            </div>
+        </section>
+    </section>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>ScrollReveal({ reset: true })</script>
-    <script type="module" src="/Assets/Script/Main.js"></script>
-    <script src="/Assets/Script/Nav.js"></script>
+    <script type="module" src="Assets/Script/Main.js"></script>
+    <script src="Assets/Script/Nav.js"></script>
 </body>
 </html>
