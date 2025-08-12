@@ -3,7 +3,42 @@ import { GetInfoInDataJson } from "./API.js"
 // =======================
 // FORMULÁRIO DE CONTATO
 // =======================
-\
+document.getElementById('formContato').addEventListener('submit', async function(event) {
+    event.preventDefault()
+
+    const nome = this.nome.value
+    const email = this.email.value
+    const mensagem = this.mensagem.value
+    const botao = this.querySelector('button')
+    const statusMsg = document.getElementById('statusMsg')
+
+    botao.disabled = true
+    botao.textContent = 'Enviando...'
+    statusMsg.textContent = ''
+
+    try {
+        const resposta = await fetch('/api/enviar-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome, email, mensagem })
+        })
+
+        const resultado = await resposta.json()
+
+        if (resultado.status === 'ok') {
+            statusMsg.textContent = '✅ Mensagem enviada com sucesso!'
+            this.reset()
+        } else {
+            statusMsg.textContent = '❌ Erro: ' + resultado.mensagem
+        }
+    } catch (erro) {
+        statusMsg.textContent = '❌ Erro inesperado: ' + erro.message
+    }
+
+    botao.disabled = false
+    botao.textContent = 'Enviar'
+    setTimeout(() => statusMsg.textContent = "", 5000)
+})
 
 // =======================
 // ANIMAÇÕES SCROLLREVEAL
