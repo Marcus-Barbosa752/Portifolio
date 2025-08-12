@@ -1,0 +1,153 @@
+@media (max-width: 900px) {
+    body, html {
+        overflow-x: hidden;
+    }
+    header {
+        padding: 30px 20px;
+    }
+    header nav, header button#BtnServicos,
+    section.Banner .Informacoes button#BtnAcessarProjetoBanner,
+    section.Banner .Informacoes p {
+        display: none;
+    }
+    header button#BtnMenu {
+        display: block;
+        background: none;
+        border: none;
+        box-shadow: none;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+    header button#BtnMenu span {
+        width: 50px;
+        height: 5px;
+        background: white;
+        border-radius: 10px;
+    }
+    header button#BtnMenu span:nth-child(2) {
+        width: 25px;
+    }
+    section.Banner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        overflow: hidden;
+    }
+    section.Banner .Informacoes h4 {
+        text-align: left;
+        width: 85vw;
+        font-size: 20px;
+    }
+    section.Banner .FigurasBanner {
+        order: 1;
+        width: 100%;
+    }
+    section.Banner section.ControlsBannerMobile {
+        order: 2;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        margin: 20px 0;
+    }
+    section.Banner section.ControlsBannerMobile nav {
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: black;
+        border-radius: 20px;
+    }
+    section.Banner section.ControlsBannerMobile nav button {
+        width: calc(100% / 2);
+        height: 100%;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: inherit;
+    }
+    section.Banner section.ControlsBannerMobile nav button:nth-child(1) {
+        border-right: 2px solid white;
+    }
+    section.Habilidades {
+        overflow-x: auto;
+        padding: 10px;
+    }
+    section.Habilidades::-webkit-scrollbar {
+        height: 0;
+    }
+    section.Sobre {
+        display: block;
+        padding: 0;
+    }
+    section.Sobre .LeftSobre {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 10px;
+    }
+    section.Sobre img {
+        display: none;
+    }
+    section.ProjetosHome {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2px;
+    }
+    section.ProjetosHome .CardProjetosHome {
+        width: calc(100% / 2.1);
+    }
+
+    section.TemasProjetos {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 30px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        margin-top: -40px;
+    }
+
+    section.TemasProjetos::-webkit-scrollbar {
+        height: 0;
+    }
+
+    section.TemasProjetos .CardTemaProjetos {
+        flex: 0 0 calc(50% - 20px);
+        min-width: 160px;
+        scroll-snap-align: center;
+    }
+
+    .FormContato {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        height: auto;
+    }
+    .FormContato .Left {
+        border-right: none;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .FormContato .Left .Button {
+        transform: translateY(300px);
+    }
+
+    .FormContato textarea {
+        transform: translateY(-80px);
+        width: 100%;
+        height: 250px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+}
