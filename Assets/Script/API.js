@@ -30,8 +30,7 @@ const GetInfoInDataJson = async (keys) => {
         const validationRules = {
             Banner: ['Titulo', 'Descricao', 'Acesso', 'Imagem'],
             Projetos: ['Nome', 'Image', 'Descricao', 'Link', 'IsGitHub', 'IsAcessoLink'],
-            Habilidades: ['Nome', 'Nivel', 'Icone'],
-            Tema: ['Nome', 'CorPrimaria', 'CorSecundaria']
+            Python: ["Image", "Titulo", "Link"]
         }
 
         // Garantir que keys seja array
