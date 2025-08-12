@@ -1,3 +1,5 @@
+const SessaoHabilidades = document.getElementById('SessaoHabilidades')
+
 const SessionIndicator = document.getElementById('SessionIndicator')
 
 const LiHome = document.getElementById('LiHome')
@@ -6,6 +8,16 @@ const LiPerfil = document.getElementById('LiPerfil')
 
 let InitialIndicator = 0
 let InitialWidth = 130
+
+function OpenSession(position) {
+    if (position == 0) {
+        SessaoHabilidades.classList.remove('OpenSection')
+    }
+
+    if (position == 148) {
+        SessaoHabilidades.classList.add('OpenSection')
+    }
+}
 
 function setIndicatorEvents(element, position, width) {
     element.onmouseover = () => {
@@ -22,7 +34,7 @@ function setIndicatorEvents(element, position, width) {
 
         SessionIndicator.style.left = `${InitialIndicator}px`
         SessionIndicator.style.width = `${InitialWidth}px`
-        //OpenSession(position)
+        OpenSession(position)
     }
 }
 
