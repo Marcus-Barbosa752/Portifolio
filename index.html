@@ -113,18 +113,20 @@
     </section>
 
     <h3 class="TitleSession">Entre em contato</h3>
+    
     <form id="formContato" class="FormContato">
         <div class="Left" id="Left">
             <label for="">Nome</label>
-            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="text" id="InputNomeFormContato" placeholder="Seu nome">
     
-            <label for="">Email</label>
-            <input type="email" name="email" placeholder="Seu email" required>
+            <label for="">Email ou Telefone</label>
+            <input type="text" id="InputEmailOrTelefoneContato" placeholder="email@gmail.com ou 99 9 9999-9999">
             
-            <button type="submit" class="Button">Enviar</button>
-            <p id="statusMsg"></p>
+            <button id="BtnEnviarFormContato" class="Button">Enviar</button>
+            <p id="StatusFormContato"></p>
         </div>
-        <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+
+        <textarea id="InputMensagemFormContato" placeholder="Mensagem"></textarea>
     </form>
 
     <!-- Scripts -->
