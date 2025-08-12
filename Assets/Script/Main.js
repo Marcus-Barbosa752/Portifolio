@@ -93,7 +93,7 @@ ScrollReveal().reveal('.MinhaFoto', {
 // BUSCAR E RENDERIZAR PROJETOS E SLIDER
 // =======================
 const FetchProjetosData = async () => {
-    const result = await GetInfoInDataJson(["Banner", "Projetos"])
+    const result = await GetInfoInDataJson(["Banner", "Projetos", "Python"])
 
     if (!result.status || !result.data) {
         console.error("Erro ao buscar dados.")
@@ -210,6 +210,49 @@ const FetchProjetosData = async () => {
         })
     } else {
         ProjetosHome.innerHTML = "<p>Nenhum projeto encontrado.</p>"
+    }
+
+    // =======================
+    // SESSÃO DE HABILIDADES
+    // =======================
+    const InsertProjetosHabilidades = document.getElementById("InsertProjetosHabilidades")
+
+    if (!InsertProjetosHabilidades) {
+        console.warn("Elemento com id='InsertProjetosHabilidades' não encontrado no DOM. Cards Python não serão renderizados.")
+        return
+    }
+
+    if (result.data.Python && result.data.Python.length > 0) {
+        for (const projeto of result.data.Python) {
+            const card = document.createElement("div")
+            card.classList.add("CardProjetosHabilidades")
+
+            card.innerHTML = `
+                <div class="CardProjetosHabilidades">
+                    <img src="${projeto.Image}" alt="Foto de projeto python">
+        
+                    <div class="Bottom">
+                        <h4>${projeto.Titulo}</h4>
+                        <button>Acessar</button>
+                    </div>
+                </div>
+            `
+            card.querySelector("button").addEventListener("click", () => {
+                window.location.href = projeto.Link
+            })
+
+            InsertProjetosHabilidades.appendChild(card)
+        }
+
+        document.querySelectorAll(".CardProjetosHabilidades").forEach(card => {
+            ScrollReveal().reveal(card, {
+                delay: 200,
+                origin: 'left',
+                distance: '50px'
+            })
+        })
+    } else {
+        console.log("Nenhum projeto de python encontrado!")
     }
 }
 
