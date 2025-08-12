@@ -8,6 +8,7 @@ const BtnEnviarFormContato = document.getElementById('BtnEnviarFormContato')
 const InputNomeFormContato = document.getElementById("InputNomeFormContato")
 const InputEmailOrTelefoneContato = document.getElementById("InputEmailOrTelefoneContato")
 const InputMensagemFormContato = document.getElementById("InputMensagemFormContato")
+const StatusFormContato = document.getElementById('StatusFormContato')
 
 const REGEXEMAIL = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 const REGEXTELEFONE = /^(?:\+55\s?)?(?:\(?\d{2}\)?\s?)?(?:9\d{4}-?\d{4}|\d{4}-?\d{4})$/
@@ -33,22 +34,29 @@ const VerificarCampo = (Campo) => {
 BtnEnviarFormContato.onclick = (e) => {
     e.preventDefault()
 
-    if (!VerificarCampo(InputNomeFormContato) || 
-        !VerificarCampo(InputEmailOrTelefoneContato) || 
-        !VerificarCampo(InputMensagemFormContato)) {
-        alert("Preencha todos os campos corretamente!")
-        return
+    try {
+        if (!VerificarCampo(InputNomeFormContato) || 
+            !VerificarCampo(InputEmailOrTelefoneContato) || 
+            !VerificarCampo(InputMensagemFormContato)) {
+            alert("Preencha todos os campos corretamente!")
+            return
+        }
+    
+        const SeuTexto = `
+            Nome: ${InputNomeFormContato.value}
+            Email/Telefone: ${InputEmailOrTelefoneContato.value}
+            Texto:
+            ${InputMensagemFormContato.value}
+        `
+    
+        Url = `https://wa.me/5571991778968?text=${encodeURIComponent(SeuTexto)}`
+        open(Url)
+
+    }catch (e) {
+        console.log("Não foi possivel enviar seu formulario!")
+        StatusFormContato.textContent = 'Não foi possivel enviar seu formulario!'
+        setTimeout(StatusFormContato.textContent = '', 5000)
     }
-
-    const SeuTexto = `
-        Nome: ${InputNomeFormContato.value}
-        Email/Telefone: ${InputEmailOrTelefoneContato.value}
-        Texto:
-        ${InputMensagemFormContato.value}
-    `
-
-    Url = `https://wa.me/5571991778968?text=${encodeURIComponent(SeuTexto)}`
-    open(Url)
 }
 
 // =======================
