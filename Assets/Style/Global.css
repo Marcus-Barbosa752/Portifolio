@@ -4,3 +4,17 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body::-webkit-scrollbar,
+section.SessaoHabilidades::-webkit-scrollbar {
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb, 
+section.SessaoHabilidades::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, blue, rgb(0, 0, 63));
+    border-radius: 10px;
+}
+section.Habilidades .CardHabilidades,
+section.SessaoHabilidades section.HabilidadesAndProjetos .Left .CardHabilidades {
+    background: var(--Bg-Habilidades);
+    box-shadow: 0 0 8px var(--Box-Habilidades);
+}
