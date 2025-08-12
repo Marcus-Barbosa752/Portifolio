@@ -1,0 +1,8 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [],
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/Portifolio/$1" }
+    ]
+}
