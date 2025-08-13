@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#00004d">
@@ -10,9 +11,13 @@
     <!-- Flaticon -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
 
     <!-- CSS Local -->
     <link rel="stylesheet" href="Assets/Style/Global.css">
@@ -20,10 +25,23 @@
     <link rel="stylesheet" href="Assets/Style/SliderShow.css">
     <link rel="stylesheet" href="Assets/Style/Responsive.css">
 </head>
+
 <body>
 
     <div class="SpinBody"></div>
-    
+
+    <!-- Menu float mobile -->
+    <section class="MenuFloatMobile" id="MenuFloatMobile">
+        <nav>
+            <button id="BtnPaginaInicialMobile"><i class="fi fi-sr-home"></i>Pagina inicial</button>
+            <button id="BtnHablilidadesMobile"><i class="fi fi-sr-responsability"></i>Habilidades</button>
+            <button id="BtnPerfilMobile"><i class="fi fi-sr-user"></i>Perfil</button>
+            <div class="IndicatorSessionMobile" id="IndicatorSessionMobile"></div>
+        </nav>
+
+        <button id="BtnOpenServicos"><i class="fi fi-sr-user-headset"></i>Serviços</button>
+    </section>
+
     <!-- Cabeçalho -->
     <header>
         <img src="Assets/Images/Icon.png" alt="Logo">
@@ -40,8 +58,8 @@
 
         <button id="BtnServicos"><i class="fi fi-sr-user-headset"></i>Serviços</button>
         <button id="BtnMenu">
-            <span class="SpanOpenMenuDois"></span>
-            <span class="SpanOpenMenuUm"></span>
+            <span id="SpanOpenMenuDois" class="SpanOpenMenuDois"></span>
+            <span id="SpanOpenMenuUm" class="SpanOpenMenuUm"></span>
         </button>
     </header>
 
@@ -77,12 +95,24 @@
     <h3 class="TitleSession">Habilidades</h3>
 
     <section class="Habilidades">
-        <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-python"></i></div>
-        <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;"><i class="fi fi-brands-node-js"></i></div>
-        <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-js"></i></div>
-        <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;"><i class="fi fi-ss-react"></i></div>
-        <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;"><i class="fi fi-brands-typescript"></i></div>
-        <div class="CardHabilidades" style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;"><i class="fi fi-brands-mysql"></i></div>
+        <div class="CardHabilidades"
+            style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;"><i
+                class="fi fi-brands-python"></i></div>
+        <div class="CardHabilidades"
+            style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;"><i
+                class="fi fi-brands-node-js"></i></div>
+        <div class="CardHabilidades"
+            style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;"><i
+                class="fi fi-brands-js"></i></div>
+        <div class="CardHabilidades"
+            style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;"><i
+                class="fi fi-ss-react"></i></div>
+        <div class="CardHabilidades"
+            style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;"><i
+                class="fi fi-brands-typescript"></i></div>
+        <div class="CardHabilidades"
+            style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;"><i
+                class="fi fi-brands-mysql"></i></div>
     </section>
 
     <h3 class="TitleSession">Sobre</h3>
@@ -99,7 +129,8 @@
             trabalho.
         </div>
 
-        <img class="MinhaFoto" src="Assets/Images/Marcus_Barbosa_Anime.png" alt="Foto de Marcus Barbosa no estilo de aniime">
+        <img class="MinhaFoto" src="Assets/Images/Marcus_Barbosa_Anime.png"
+            alt="Foto de Marcus Barbosa no estilo de aniime">
     </section>
 
     <h3 class="TitleSession">
@@ -122,7 +153,7 @@
         </div>-->
     </section>
 
-    <h3 class="TitleSession">Temas</h3>    
+    <h3 class="TitleSession">Temas</h3>
 
     <section class="TemasProjetos">
         <div class="CardTemaProjetos">
@@ -142,10 +173,10 @@
         <div class="Left" id="Left">
             <label for="">Nome</label>
             <input type="text" id="InputNomeFormContato" placeholder="Seu nome">
-    
+
             <label for="">Email ou Telefone</label>
             <input type="text" id="InputEmailOrTelefoneContato" placeholder="email@gmail.com ou 99 9 9999-9999">
-            
+
             <button id="BtnEnviarFormContato" class="Button">Enviar</button>
             <p id="StatusFormContato"></p>
         </div>
@@ -169,29 +200,66 @@
         <div class="ContainerSearch">
             <i class="fi fi-rr-search"></i>
             <input type="text" id="InputSearchHabilidadesSession" placeholder="Pesquisar">
-            <input type="text" id="InputFiltroHabilidadesSession" value="Todos" placeholder="Filtro" list="DataHabilidades">
+            <input type="text" id="InputFiltroHabilidadesSession" value="Todos" placeholder="Filtro"
+                list="DataHabilidades">
         </div>
 
         <section class="HabilidadesAndProjetos">
             <div class="Left LeftDesktop" id="LeftDesktop">
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-python"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;"><i class="fi fi-brands-node-js"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-js"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;"><i class="fi fi-ss-react"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;"><i class="fi fi-brands-typescript"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;"><i class="fi fi-brands-mysql"></i></div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;">
+                    <i class="fi fi-brands-python"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;">
+                    <i class="fi fi-brands-node-js"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;">
+                    <i class="fi fi-brands-js"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;">
+                    <i class="fi fi-ss-react"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;">
+                    <i class="fi fi-brands-typescript"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;">
+                    <i class="fi fi-brands-mysql"></i>
+                </div>
             </div>
 
             <div class="Left LeftMobile" id="LeftMobile">
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-python"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;"><i class="fi fi-brands-node-js"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;"><i class="fi fi-brands-js"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;"><i class="fi fi-ss-react"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;"><i class="fi fi-brands-typescript"></i></div>
-                <div class="CardHabilidadesProjetos" style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;"><i class="fi fi-brands-mysql"></i></div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #ffd9004f, #0019bd4d); --Box-Habilidades: #FFD700;">
+                    <i class="fi fi-brands-python"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #00ff0049, #00a80056); --Box-Habilidades: #00FF00;">
+                    <i class="fi fi-brands-node-js"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #ffd90054, #9e860065); --Box-Habilidades: #FFD700;">
+                    <i class="fi fi-brands-js"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #00ffff57, #0099995d); --Box-Habilidades: #00FFFF;">
+                    <i class="fi fi-ss-react"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #0000ff59, #0000aa4b); --Box-Habilidades: #0000FF;">
+                    <i class="fi fi-brands-typescript"></i>
+                </div>
+                <div class="CardHabilidadesProjetos"
+                    style="--Bg-Habilidades: linear-gradient(to bottom, #0073ff80, #ffd9006b); --Box-Habilidades: #0073FF;">
+                    <i class="fi fi-brands-mysql"></i>
+                </div>
             </div>
 
-            <div class="Rigth">
+            <div class="Rigth" id="Rigth">
                 <div class="IndicatorHabilidades" id="IndicatorHabilidades">Todos os projetos</div>
 
                 <section id="InsertProjetosHabilidades" class="InsertProjetosHabilidades">
@@ -208,9 +276,108 @@
         </section>
     </section>
 
+    <!-- Perfil -->
+    <section class="SessaoPerfil" id="SessaoPerfil">
+        <div class="Left">
+            <div class="Card">
+                <div class="Top">
+                    <svg viewBox="0 0 200 200" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="gradStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="black" />
+                                <stop offset="100%" stop-color="white" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- círculo com gradiente responsivo -->
+                        <circle cx="100" cy="100" r="90" 
+                            fill="none"
+                            stroke="url(#gradStroke)"
+                            stroke-width="10"
+                            stroke-dasharray="65"
+                            stroke-linecap="round"
+                            />
+                    </svg>
+
+
+
+                    <img src="Assets/Images/Perfil.png" alt="Foto de Marcus Barbosa">
+
+                    <div class="Info">
+                        Marcus Barbosa
+                        marcusbarbosa175@gmail.com
+                    </div>
+                </div>
+
+                <div class="Bottom">
+                    <div class="Info">
+                        <div class="Left">
+                            Projetos feitos
+                            <span>10</span>
+                        </div>
+
+                        <button>Fazer um contrato</button>
+                    </div>
+                </div>
+            </div>
+
+            <nav>
+                <button><i class="fi fi-sr-file-pdf"></i>Download do currículo (PDF)</button>
+                <button><i class="fi fi-sc-overview" id="ItagMobile"></i>Visualizar</button>
+            </nav>
+        </div>
+
+        <div class="Right">
+            <h4>Nome completo</h4>
+            <span>Marcus Vinicius Assis De Jesus Barbosa</span>
+
+            <h4>Idade</h4>
+            <span>22 ano</span>
+
+            <h4>Habilidades</h4>
+
+            <div class="Desktop">
+                <div>Prototipagem <h4>- Figma</h4>
+                </div>
+                <div>Front-End <h4>- Html, Css, JavaScript e Typescript</h4>
+                </div>
+                <div>Back-End <h4>- Python e NodeJs</h4>
+                </div>
+                <div>Bando de dados <h4>- Mysql</h4>
+                </div>
+                <div>Frameworks de javascript <h4>- React</h4>
+                </div>
+                <div>Frameworks de python <h4>- Flask</h4>
+                </div>
+            </div>
+
+            <div class="Mobile">
+                <h3>Prototipagem</h3>
+                <div>Figma</div>
+
+                <h3>Front-End</h3>
+                <div>Html, Css, JavaScript e Typescript</div>
+
+                <h3>Front-End</h3>
+                <div>Python e NodeJs</div>
+
+                <h3>Banco de dados</h3>
+                <div>Mysql</div>
+
+                <h3>Frameworks de javascript</h3>
+                <div>React</div>
+
+                <h3>Frameworks de python</h3>
+                <div>Flask</div>
+            </div>
+
+        </div>
+    </section>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>ScrollReveal({ reset: true })</script>
     <script type="module" src="Assets/Script/Main.js"></script>
     <script src="Assets/Script/Nav.js"></script>
 </body>
+
 </html>
