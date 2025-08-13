@@ -5,11 +5,13 @@
     font-family: sans-serif;
 }
 body::-webkit-scrollbar,
-section.SessaoHabilidades::-webkit-scrollbar {
+section.SessaoHabilidades::-webkit-scrollbar,
+section.SessaoPerfil::-webkit-scrollbar {
     width: 5px;
 }
 body::-webkit-scrollbar-thumb, 
-section.SessaoHabilidades::-webkit-scrollbar-thumb {
+section.SessaoHabilidades::-webkit-scrollbar-thumb,
+section.SessaoPerfil::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, blue, rgb(0, 0, 63));
     border-radius: 10px;
 }
