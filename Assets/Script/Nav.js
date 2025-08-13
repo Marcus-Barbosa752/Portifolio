@@ -12,10 +12,12 @@ let InitialWidth = 130
 function OpenSession(position) {
     if (position == 0) {
         SessaoHabilidades.classList.remove('OpenSection')
+        document.body.style.overflowY = "auto"
     }
 
     if (position == 148) {
         SessaoHabilidades.classList.add('OpenSection')
+        document.body.style.overflow = "hidden"
     }
 }
 
