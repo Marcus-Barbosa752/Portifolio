@@ -522,12 +522,17 @@ section.SessaoHabilidades section.HabilidadesAndProjetos .Left {
     grid-template-rows: repeat(6, 60px);
     grid-gap: 20px;
 }
-section.SessaoHabilidades section.HabilidadesAndProjetos .Left .CardHabilidades {
+section.SessaoHabilidades section.HabilidadesAndProjetos .Left .CardHabilidadesProjetos {
     border-radius: 20px;
     display: grid;
     place-items: center;
     font-size: 30px;
     color: white;
+}
+section.SessaoHabilidades section.HabilidadesAndProjetos .Left .CardHabilidadesProjetos:hover,
+section.SessaoHabilidades section.HabilidadesAndProjetos .Left .CardHabilidadesProjetos.ActiveHabilidadeCard {
+    background: var(--Bg-Habilidades);
+    box-shadow: 0 0 10px black;
 }
 section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth {
     position: relative;
