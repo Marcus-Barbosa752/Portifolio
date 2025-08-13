@@ -9,6 +9,9 @@ body {
     height: 100vh;
     overflow-x: hidden;
 }
+section.MenuFloatMobile {
+    display: none;
+}
 header button#BtnMenu,
 section.ControlsBannerMobile {
     display: none;
@@ -465,7 +468,6 @@ section.SessaoHabilidades {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) skew(-36deg, 0deg) scale(0, 0.25);
-    animation: tech 2s linear;
     box-shadow: 0 0 20px black;
 }
 section.SessaoHabilidades .ContainerSearch {
@@ -606,9 +608,248 @@ section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosH
 section.SessaoHabilidades section.HabilidadesAndProjetos .Rigth .InsertProjetosHabilidades .CardProjetosHabilidades .Bottom button:hover {
     color: aqua;
 }
+section.SessaoPerfil {
+    position: absolute;
+    background: var(--Bg-Image), #333;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+    width: 80vw;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skew(-36deg, 0deg) scale(0, 0.25);
+    box-shadow: 0 0 20px black;
+    display: flex;
+}
+section.SessaoPerfil .Left,
+section.SessaoPerfil .Right {
+    height: 100%;
+}
+section.SessaoPerfil .Left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 10px;
+}
+section.SessaoPerfil .Left .Card {
+    width: 100%;
+    padding: 0 30px;
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+section.SessaoPerfil .Left .Card .Top {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+section.SessaoPerfil .Left .Card .Top::after {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+section.SessaoPerfil .Left .Card .Top svg {
+    width: 150px;
+    height: 150px;
+    transform: rotate(90deg);
+    z-index: 1;
+}
+section.SessaoPerfil .Left .Card .Top svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: transparent;
+    stroke-width: 10;
+    transform: translate(5px, 5px);
+}
+section.SessaoPerfil .Left .Card .Top svg circle:nth-child(2) {
+    stroke: url(#gradStroke);
+    stroke-dasharray: 80;
+    stroke-linecap: round;
+}
+section.SessaoPerfil .Left .Card .Top img {
+    position: absolute;
+    bottom: 16px;
+    left: 32px;
+    width: 60px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+section.SessaoPerfil .Left .Card .Top .Info {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+}
+section.SessaoPerfil .Left .Bottom {
+    width: 100%;
+}
+section.SessaoPerfil .Left .Bottom .Info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section.SessaoPerfil .Left .Bottom .Info .Left {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 30px;
+    position: relative;
+    width: 50%;
+}
+section.SessaoPerfil .Left .Bottom .Info .Left :after {
+    position: absolute;
+    content: '';
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 98%;
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+section.SessaoPerfil .Left .Bottom .Info button {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.418), #66666667);
+    box-shadow: 0 0 10px black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+section.SessaoPerfil .Left .Bottom .Info button:hover {
+    color: black;
+}
+section.SessaoPerfil .Left .Bottom .Info button::after,
+section.SessaoPerfil .Left .Bottom .Info button::before {
+    transition: .4s ease-in-out;
+    position: absolute;
+    content: "";
+    top: 0;
+    box-shadow: inset 0 0 10px black;
+    transform: skew(20deg);
+    z-index: -1;
+    width: 0;
+    background: white;
+    border-radius: inherit;
+    height: 100%;
+}
+section.SessaoPerfil .Left .Bottom .Info button::after {
+    left: -10px;
+}
+section.SessaoPerfil .Left .Bottom .Info button::before {
+    right: -10px;
+}
+section.SessaoPerfil .Left .Bottom .Info button:hover::after,
+section.SessaoPerfil .Left .Bottom .Info button:hover::before {
+    width: 110%;
+}
+section.SessaoPerfil .Left nav {
+    width: 72%;
+    margin-left: 50%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px white;
+    display: flex;
+    gap: 10px;
+}
+section.SessaoPerfil .Left nav button {
+    width: auto;
+    padding: 10px;
+    border: none;
+    border-radius: inherit;
+    background: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+section.SessaoPerfil .Left nav button:hover:nth-child(1) {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.50);
+}
+section.SessaoPerfil .Left nav button:hover:nth-child(2) {
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.50);
+}
+section.SessaoPerfil .Right {
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+    margin-top: 25px;
+    border-radius: 10px;
+    width: calc(100% - 40.5%);
+    padding: 20px;
+    color: white;
+    line-height: 40px;
+}
+section.SessaoPerfil .Right span {
+    font-weight: normal;
+}
+section.SessaoPerfil .Right h4 {
+    font-size: 20px;
+}
+section.SessaoPerfil .Right .Desktop {
+    width: 100%;
+}
+section.SessaoPerfil .Right .Desktop div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: normal;
+    white-space: nowrap;
+    font-size: 17px;
+}
+section.SessaoPerfil .Right .Desktop div h4 {
+    width: 36%;
+    font-weight: normal;
+    font-size: 17px;
+}
+section.SessaoPerfil .Right .Mobile {
+    display: none;
+}
+section.SessaoPerfil .Right .Mobile div {
+    width: calc(100% - 15px);
+    border-left: solid white 2px;
+    border-bottom: solid white 2px;
+    padding: 5px 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 15px;
+}
 section.OpenSection {
     transform: translate(-50%, -50%) skew(0deg, 0deg) scale(1, 1);
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: scroll;;
 }
+
+/* CiclePerfil.style.strokeDasharray = 440 - (440 * Tempo) / 60 */
