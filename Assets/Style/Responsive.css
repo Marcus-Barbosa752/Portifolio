@@ -149,5 +149,54 @@
         padding: 10px;
         border-radius: 10px;
     }
-
+    section.SessaoHabilidades {
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    section.SessaoHabilidades .ContainerSearch {
+        border-radius: 0;
+        width: 100vw;
+    }
+    section.SessaoHabilidades .ContainerSearch input[type="text"] {
+        width: calc(100% + 100px);
+    }
+    section.SessaoHabilidades .HabilidadesAndProjetos {
+        flex-direction: column;
+    }
+    section.SessaoHabilidades .HabilidadesAndProjetos .LeftDesktop {
+        display: none;
+    }
+    section.SessaoHabilidades .HabilidadesAndProjetos .LeftMobile {
+        display: grid;
+        grid-template-columns: repeat(6, 60px);
+        grid-template-rows: repeat(1, 60px);
+        gap: 20px;
+        margin-left: -38px;
+        width: 100vw;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+    section.SessaoHabilidades .HabilidadesAndProjetos .LeftMobile .CardHabilidadesProjetos {
+        border-radius: 20px;
+        display: grid;
+        place-items: center;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+    section.SessaoHabilidades .HabilidadesAndProjetos .LeftMobile .CardHabilidadesProjetos:hover,
+    section.SessaoHabilidades .HabilidadesAndProjetos .LeftMobile .CardHabilidadesProjetos.ActiveHabilidadeCard {
+        background: var(--Bg-Habilidades);
+        box-shadow: 0 0 10px black;
+    }
+    section.SessaoHabilidades #Rigth {
+        width: 100vw;
+        margin-left: -41px;
+    }
+    section.SessaoHabilidades #Rigth .IndicatorHabilidades {
+        width: 90%;
+    }
 }
