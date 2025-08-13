@@ -2,6 +2,86 @@
     body, html {
         overflow-x: hidden;
     }
+    section.MenuFloatMobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -90%;
+        background: black;
+        width: 80%;
+        height: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        z-index: 1;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 2;
+    }
+    section.MenuFloatMobile.MenuFloatMobileActivate {
+        animation: OpenMenuMobile 1s ease-in-out;
+        right: 0;
+    }
+    @keyframes OpenMenuMobile {
+        0% {
+            right: -90%;
+        }
+        50% {
+            right: 0;
+            width: 90%;
+        }
+        75% {
+            right: 10px;
+            width: 70%;
+        }
+        100% {
+            right: 0;
+            width: 80%;
+        }
+    }
+    section.MenuFloatMobile button#BtnOpenServicos {
+        padding: 10px;
+        width: 130px;
+        font-size: 17px;
+        font-weight: bold;
+        border: none;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 5px 10px white;
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    section.MenuFloatMobile nav {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    section.MenuFloatMobile nav .IndicatorSessionMobile {
+        position: absolute;
+        left: 40px;
+        top: 45px;
+        width: 30%;
+        height: 2px;
+        background: white;
+        border-radius: 10px;
+        transition: .4s ease-in-out;
+    }
+    section.MenuFloatMobile nav button {
+        background: none;
+        border: none;
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        padding: 10px 40px;
+        gap: 20px;
+        font-size: 20px;
+    }
+
     header {
         padding: 30px 20px;
     }
@@ -15,11 +95,13 @@
         background: none;
         border: none;
         box-shadow: none;
-        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         gap: 5px;
+    }
+    header button#BtnMenu.Activate {
+        transform: rotate(45deg);
     }
     header button#BtnMenu span {
         width: 50px;
@@ -29,6 +111,14 @@
     }
     header button#BtnMenu span:nth-child(2) {
         width: 25px;
+    }
+    header button#BtnMenu span.ActivateSpanUmMenuMobile {
+        margin-top: 10px;
+    }
+    header button#BtnMenu span.ActivateSpanDoisMenuMobile {
+        margin-top: -10px;
+        width: 50px;
+        transform: rotate(90deg);
     }
     section.Banner {
         display: flex;
@@ -77,6 +167,9 @@
     section.Habilidades {
         overflow-x: auto;
         padding: 10px;
+    }
+    section#SessaoHabilidades.OpenSection {
+        transform: translateY(0px);
     }
     section.Habilidades::-webkit-scrollbar {
         height: 0;
@@ -198,5 +291,47 @@
     }
     section.SessaoHabilidades #Rigth .IndicatorHabilidades {
         width: 90%;
+    }
+    section.SessaoPerfil {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    section.SessaoPerfil .Left .Card,
+    section.SessaoPerfil .Right {
+        width: 100vw;
+    }
+    section.SessaoPerfil .Left .Card {
+        margin-left: -6px;
+        margin-top: 70px;
+    }
+    section.SessaoPerfil .Right .Desktop {
+        display: none;
+    }
+    section.SessaoPerfil .Right .Mobile {
+        display: block;
+    }
+    section.SessaoPerfil .Left .Card .Top {
+        flex-direction: column;
+    }
+    section.SessaoPerfil .Left .Card .Top svg {
+        margin-top: -80px;
+    }
+    section.SessaoPerfil .Left .Card .Top .Info {
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    section.SessaoPerfil .Left .Card .Top img {
+        width: 70px;
+        left: 137px;
+        bottom: 105px;
+    }
+    section.SessaoPerfil .Left nav {
+        width: 90vw;
+        margin-left: 200px;
+    }
+    section.SessaoPerfil .Left nav i#ItagMobile {
+        display: none;
     }
 }
