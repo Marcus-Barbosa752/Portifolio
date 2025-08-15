@@ -2,11 +2,31 @@
 const validateDataKey = (data, key, requiredFields) => {
     for (const obj of data) {
         if (obj[key]) {
-            for (const element of obj[key]) {
-                for (const field of requiredFields) {
-                    if (!(field in element) || element[field] === "" || element[field] === null) {
-                        console.warn(`Item em "${key}" sem o campo obrigatório "${field}":`, element)
-                        return false
+            const value = obj[key]
+
+            // Caso seja objeto com subarrays (ex: Servicos)
+            if (typeof value === "object" && !Array.isArray(value)) {
+                for (const subArray of Object.values(value)) {
+                    if (!Array.isArray(subArray)) continue
+                    for (const element of subArray) {
+                        for (const field of requiredFields) {
+                            if (!(field in element) || element[field] === "" || element[field] === null) {
+                                console.warn(`Item em "${key}" sem o campo obrigatório "${field}":`, element)
+                                return false
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Caso seja array direto
+            else if (Array.isArray(value)) {
+                for (const element of value) {
+                    for (const field of requiredFields) {
+                        if (!(field in element) || element[field] === "" || element[field] === null) {
+                            console.warn(`Item em "${key}" sem o campo obrigatório "${field}":`, element)
+                            return false
+                        }
                     }
                 }
             }
@@ -30,7 +50,8 @@ const GetInfoInDataJson = async (keys) => {
         const validationRules = {
             Banner: ['Titulo', 'Descricao', 'Acesso', 'Imagem'],
             Projetos: ['Nome', 'Image', 'Descricao', 'Link', 'IsGitHub', 'IsAcessoLink'],
-            Python: ["Image", "Titulo", "Link"]
+            Python: ["Image", "Titulo", "Link"],
+            Servicos: ["Capa", "Titulo", "Sobre", "Link"]
         }
 
         // Garantir que keys seja array
@@ -52,13 +73,31 @@ const GetInfoInDataJson = async (keys) => {
                 continue
             }
 
-            // Extrair e armazenar no resultado
-            results[key] = data.flatMap(obj => obj[key] || [])
+            // Extrair dados
+            results[key] = data.flatMap(obj => {
+                const value = obj[key]
+                if (!value) return []
+
+                // Caso seja array direto
+                if (Array.isArray(value)) return value
+
+                // Caso seja objeto → adiciona a categoria
+                if (typeof value === "object") {
+                    return Object.entries(value).flatMap(([categoria, itens]) =>
+                        itens.map(item => ({
+                            ...item,
+                            Categoria: categoria
+                        }))
+                    )
+                }
+
+                return []
+            })
         }
 
         return { status: true, data: results }
 
-    }catch (error) {
+    } catch (error) {
         console.error('Error fetching data:', error)
         return { status: false, data: null }
     }
