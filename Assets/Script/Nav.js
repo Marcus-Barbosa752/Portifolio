@@ -132,7 +132,9 @@ setIndicatorEvents(BtnHablilidadesMobile, 'habilidades')
 setIndicatorEvents(BtnPerfilMobile, 'perfil')
 
 // Restaurar estilo do indicador quando clicar nos botões mobile
-[BtnPaginaInicialMobile, BtnHablilidadesMobile, BtnPerfilMobile].forEach(btn => {
+const DOMBUTTOM = [BtnPaginaInicialMobile, BtnHablilidadesMobile, BtnPerfilMobile]
+
+DOMBUTTOM.forEach(btn => {
     btn?.addEventListener('click', () => {
         IndicatorSessionMobile.style.height = '1px'
         IndicatorSessionMobile.style.width = '100px'
