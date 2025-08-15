@@ -99,5 +99,43 @@
                 "Link": "https://www.google.com"
             }
         ]
+    },
+    {
+        "Servicos": {
+            "WebdesignAndPrototipagem": [
+                {
+                    "Capa": "Assets/Images/E-commerce.jpeg",
+                    "Titulo": "E-commerce",
+                    "Sobre": "Loja virtual moderna, segura e integrada para você vender a qualquer hora, em qualquer lugar.",
+                    "Link": "index.html"
+                },
+                {
+                    "Capa": "Assets/Images/Jogos.jpeg",
+                    "Titulo": "Jogos",
+                    "Sobre": "Transforme sua ideia em um jogo inesquecível! Criamos experiências interativas com gráficos imersivos.",
+                    "Link": "index.html"
+                },
+                {
+                    "Capa": "Assets/Images/Analise_De_Dados.jpeg",
+                    "Titulo": "Análise de Dados",
+                    "Sobre": "Coletamos, organizamos e interpretamos dados para gerar insights que impulsionam decisões estratégicas e resultados.",
+                    "Link": "index.html"
+                }
+            ],
+            "Sistemas": [
+                {
+                    "Capa": "Assets/Images/E-commerce.jpeg",
+                    "Titulo": "E-commerce",
+                    "Sobre": "Loja virtual moderna, segura e integrada para você vender a qualquer hora, em qualquer lugar.",
+                    "Link": "index.html"
+                },
+                {
+                    "Capa": "Assets/Images/Analise_De_Dados.jpeg",
+                    "Titulo": "Análise de Dados",
+                    "Sobre": "Coletamos, organizamos e interpretamos dados para gerar insights que impulsionam decisões estratégicas e resultados.",
+                    "Link": "index.html"
+                }
+            ]
+        }
     }
 ]
