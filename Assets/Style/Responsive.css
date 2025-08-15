@@ -6,9 +6,9 @@
         display: block;
         position: absolute;
         top: 0;
-        right: -90%;
+        right: 0;
         background: black;
-        width: 80%;
+        width: 0;
         height: 100%;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
@@ -19,29 +19,27 @@
         flex-direction: column;
         justify-content: space-between;
         z-index: 2;
+        overflow: hidden;
     }
     section.MenuFloatMobile.MenuFloatMobileActivate {
         animation: OpenMenuMobile 1s ease-in-out;
-        right: 0;
+        width: 80%;
     }
     @keyframes OpenMenuMobile {
         0% {
-            right: -90%;
+            width: -90%;
         }
         50% {
-            right: 0;
             width: 90%;
         }
         75% {
-            right: 10px;
             width: 70%;
         }
         100% {
-            right: 0;
             width: 80%;
         }
     }
-    section.MenuFloatMobile button#BtnOpenServicos {
+    section.MenuFloatMobile button#BtnOpenServicosMobile {
         padding: 10px;
         width: 130px;
         font-size: 17px;
@@ -333,5 +331,22 @@
     }
     section.SessaoPerfil .Left nav i#ItagMobile {
         display: none;
+    }
+    section.SessaoServico .ContainerSearch {
+        width: 100vw;
+        border-radius: 0;
+    }
+    section.SessaoServico .ContainerSearch input:nth-child(2) {
+        width: calc(100% + 200px);
+    }
+    section.SessaoServico .InsertServicosCard {
+        width: 100vw;
+        overflow-x: hidden;
+    } 
+    section.SessaoServico .InsertServicosCard h4 {
+        margin: 20px -15px;
+    }
+    section.SessaoServico .InsertServicosCard section.ProjetosServicos .CardServico h4  {
+        margin-left: 0;
     }
 }
