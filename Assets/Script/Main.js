@@ -93,7 +93,7 @@ ScrollReveal().reveal('.MinhaFoto', {
 // BUSCAR E RENDERIZAR PROJETOS E SLIDER
 // =======================
 const FetchProjetosData = async () => {
-    const result = await GetInfoInDataJson(["Banner", "Projetos", "Python"])
+    const result = await GetInfoInDataJson(["Banner", "Projetos", "Python", "Servicos"])
 
     if (!result.status || !result.data) {
         console.error("Erro ao buscar dados.")
@@ -253,6 +253,50 @@ const FetchProjetosData = async () => {
         })
     } else {
         console.log("Nenhum projeto de python encontrado!")
+    }
+
+    // =======================
+    // SESSÃO DE SERVIÇOS
+    // =======================
+    const InsertCardWebDesignPrototipagem = document.getElementById('InsertCardWebDesignPrototipagem')
+    const InsertCardSistemas = document.getElementById('InsertCardSistemas')
+
+    if (result.data.Servicos && result.data.Servicos.length > 0) {
+        console.log(result.data.Servicos)
+    
+        // Filtrar por categoria (essa info pode ser adicionada no API.js)
+        const webDesign = result.data.Servicos.filter(servico =>
+            ["WebdesignAndPrototipagem"].includes(servico.Categoria)
+        )
+        const sistemas = result.data.Servicos.filter(servico =>
+            ["Sistemas"].includes(servico.Categoria)
+        )
+    
+        // Função para criar cards
+        const createCard = (projeto) => {
+            const card = document.createElement("div")
+            card.classList.add("CardProjetosHabilidades")
+    
+            card.innerHTML = `
+                <div class="CardServico">
+                    <h4>${projeto.Titulo}</h4>
+                    <img src="${projeto.Capa}" alt="Imagem do serviço">
+                    <p>${projeto.Sobre}</p>
+                    <button>Contratar esse serviço</button>
+                </div>
+            `
+            card.querySelector("button").addEventListener("click", () => {
+                window.location.href = projeto.Link
+            })
+    
+            return card
+        }
+    
+        // Webdesign
+        webDesign.forEach(servico => InsertCardWebDesignPrototipagem.appendChild(createCard(servico)))
+    
+        // Sistemas
+        sistemas.forEach(servico => InsertCardSistemas.appendChild(createCard(servico)))
     }
 }
 
