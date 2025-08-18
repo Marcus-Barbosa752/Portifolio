@@ -62,6 +62,9 @@ header {
 header img {
     width: 50px;
 }
+header button#BtnFecharPortifolioMobile {
+    display: none;
+}
 header nav {
     color: white;
     background: rgba(255, 255, 255, 0.158);
@@ -849,6 +852,17 @@ section.SessaoPerfil .Right .Mobile div {
     padding: 5px 10px;
     border-bottom-left-radius: 10px;
     margin-left: 15px;
+}
+section.SessaoPerfil iframe {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60vw;
+    height: 0;
+    transition: .4s ease-in-out;
+}
+section.SessaoPerfil iframe.IframeCurriculoPageActive {
+    height: 90vh;
 }
 section.SessaoServico {
     position: absolute;
