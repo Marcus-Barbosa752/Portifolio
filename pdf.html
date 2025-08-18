@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Visualizar PDF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background: #333;
+            display: grid;
+            place-items: center;
+        }
+        body::-webkit-scrollbar {
+            width: 5px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 10px;
+        }
+        canvas {
+            width: 90vw;
+            display: block;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+
+<body>
+    <canvas id="pdf-canvas"></canvas>
+
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js"
+        const url = "Assets/Portifolio/curriculo_marcus_barbosa_ptbr.pdf"
+
+        const canvas = document.getElementById("pdf-canvas")
+        const ctx = canvas.getContext("2d")
+
+        pdfjsLib.getDocument(url).promise.then(pdf => {
+            pdf.getPage(1).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 })
+                canvas.width = viewport.width
+                canvas.height = viewport.height
+
+                page.render({ canvasContext: ctx, viewport: viewport })
+            })
+        })
+    </script>
+</body>
+</html>
