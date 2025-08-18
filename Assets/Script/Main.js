@@ -301,3 +301,30 @@ const FetchProjetosData = async () => {
 }
 
 FetchProjetosData()
+
+// =======================
+// VISUALIZAR O PORTIFOLIO
+// =======================
+const BtnVisualizarCurriculo = document.getElementById('BtnVisualizarCurriculo')
+const BtnFecharPortifolioMobile = document.getElementById("BtnFecharPortifolioMobile")
+const IframeCurriculoPage = document.getElementById("IframeCurriculoPage")
+
+BtnVisualizarCurriculo.onclick = () => {
+    if (BtnVisualizarCurriculo.innerHTML == '<i class="fi fi-sc-overview" id="ItagMobile"></i>Visualizar') {
+        BtnVisualizarCurriculo.innerHTML = '<i class="fi fi-sc-overview" id="ItagMobile"></i>Fechar'
+    }else {
+        BtnVisualizarCurriculo.innerHTML = '<i class="fi fi-sc-overview" id="ItagMobile"></i>Visualizar'
+    }
+
+    if (innerWidth <= 900) {
+        BtnFecharPortifolioMobile.style.display = 'block'
+    }
+
+    IframeCurriculoPage.classList.toggle("IframeCurriculoPageActive")
+
+    BtnFecharPortifolioMobile.onclick = () => {
+        BtnFecharPortifolioMobile.style.display = 'none'
+        IframeCurriculoPage.classList.toggle("IframeCurriculoPageActive")
+        BtnVisualizarCurriculo.innerHTML = '<i class="fi fi-sc-overview" id="ItagMobile"></i>Visualizar'
+    }
+}
