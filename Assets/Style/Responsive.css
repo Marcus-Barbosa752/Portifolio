@@ -349,4 +349,7 @@
     section.SessaoServico .InsertServicosCard section.ProjetosServicos .CardServico h4  {
         margin-left: 0;
     }
+    section.SessaoPerfil iframe {
+        width: 100vw;
+    }
 }
