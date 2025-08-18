@@ -46,6 +46,9 @@
     <header>
         <img src="Assets/Images/Icon.png" alt="Logo">
 
+        <!-- Fechar viwer portifolio mobile -->
+        <button id="BtnFecharPortifolioMobile">Fechar</button>
+
         <!-- Navegação de sessão -->
         <nav>
             <ul>
@@ -320,8 +323,8 @@
             </div>
 
             <nav>
-                <button><i class="fi fi-sr-file-pdf"></i>Download do currículo (PDF)</button>
-                <button><i class="fi fi-sc-overview" id="ItagMobile"></i>Visualizar</button>
+                <button><i class="fi fi-sr-file-pdf"></i><a style="color: black; text-decoration: none;" href="Assets/Portifolio/curriculo_marcus_barbosa_ptbr.pdf" download="Curriculo_de_Marcus_Barbosa_pt-BR">Download do currículo (PDF)</a></button>
+                <button id="BtnVisualizarCurriculo"><i class="fi fi-sc-overview" id="ItagMobile"></i>Visualizar</button>
             </nav>
         </div>
 
@@ -368,8 +371,10 @@
                 <h3>Frameworks de python</h3>
                 <div>Flask</div>
             </div>
-
         </div>
+
+        <!-- Visualizador de curriculo -->
+        <iframe id="IframeCurriculoPage" src="pdf.html" frameborder="0"></iframe>
     </section>
 
     <!-- Serviços -->
