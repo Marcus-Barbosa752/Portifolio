@@ -42,12 +42,12 @@
     {
         "Projetos": [
             {
-                "Nome": "Projeto A",
-                "Image": "Assets/Images/Banner/Banner_Um.jpg",
-                "Descricao": "Descrição do Projeto A",
-                "Link": "http://projeto-a.com",
+                "Nome": "Terminal de linguaagens",
+                "Image": "Assets/Images/Projetos/Terminal_Card.png",
+                "Descricao": "Você pode digitar ou colocar no modo automatico para ver os codigos aparecerem. Você pode escolher qual linguagem deseja codificar",
+                "Link": "https://marcus-barbosa752.github.io/Terminal/",
                 "IsGitHub": true,
-                "IsAcessoLink": false
+                "IsAcessoLink": true
             },
             {
                 "Nome": "Projeto B",
