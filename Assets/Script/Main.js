@@ -191,7 +191,10 @@ const FetchProjetosData = async () => {
                 <img src="${projeto.Image}" alt="Imagem do Projeto">
                 <div class="Bottom">
                     <h4>${projeto.Nome}</h4>
-                    <button>Acessar</button>
+                    <nav>
+                        <button>Acessar</button>
+                        <button>Sobre</button>
+                    </nav>
                 </div>
             `
             card.querySelector("button").addEventListener("click", () => {
