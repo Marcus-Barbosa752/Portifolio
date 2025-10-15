@@ -306,7 +306,11 @@ section.ProjetosHome .CardProjetosHome .Bottom {
 section.ProjetosHome .CardProjetosHome .Bottom h4 {
     margin-left: 10px;
 }
-section.ProjetosHome .CardProjetosHome .Bottom button {
+section.ProjetosHome .CardProjetosHome .Bottom nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+section.ProjetosHome .CardProjetosHome .Bottom nav button {
     background: none;
     border: none;
     width: 100%;
