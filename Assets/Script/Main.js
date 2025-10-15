@@ -198,7 +198,7 @@ const FetchProjetosData = async () => {
                 </div>
             `
             card.querySelector("button").addEventListener("click", () => {
-                window.location.href = projeto.Link
+                open(projeto.Link, "__blank")
             })
             ProjetosHome.appendChild(card)
         }
